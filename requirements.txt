@@ -2,3 +2,4 @@ ruff
 scikit-learn
 pandas
 numpy
+scikit-image
