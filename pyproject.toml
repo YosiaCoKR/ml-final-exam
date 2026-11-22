@@ -1,0 +1,31 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["migrations", "notebooks/.ipynb_checkpoints"]
+
+[tool.ruff.lint]
+select = [
+    "E", "W",   # pycodestyle
+    "F",        # pyflakes
+    "I",        # isort
+    "B",        # flake8-bugbear
+    "UP",       # pyupgrade
+    "SIM",      # simplify
+    "NPY",      # numpy best practice
+    "PD",       # pandas-vet
+]
+ignore = [
+    "E501",     # line too long (urusan formatter)
+    "PD901",    # nama variabel `df` boleh
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]       # unused import ok buat re-export
+"tests/**" = ["B011"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["myproject"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
